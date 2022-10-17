@@ -7,7 +7,7 @@
 const { Client } = require("pg");
 
 async function doDemo() {
-  const client = new Client(); //defaults to localhost
+  const client = new Client({ database: 'demos' }); //defaults to localhost -- Melissa not: this was ust Client() but that didn't work so I copied the object from the other demo
   await client.connect();
 
   //prep the table to a known empty state
